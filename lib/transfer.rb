@@ -30,11 +30,13 @@ class Transfer
 end
 
   def reverse_transfer
+    if @status == "complete"
     @sender.balance += amount
     @receiver.balance -= amount
     @status = "reversed"
     #reverse a transfer between two accounts
   end
+end
 
 
 end
