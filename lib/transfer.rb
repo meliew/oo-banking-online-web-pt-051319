@@ -18,7 +18,7 @@ class Transfer
     #sender and a receiver
     #amount to transfer
     #deduct the amount from the sender and add it to the receiver
-    if @sender.status != "open" || @status != "pending"
+    if @sender.status != "open" || @status != "pending" || @sender.balance < @amount
       @status = "rejected"
       "Transaction rejected. Please check your account balance."
     else
